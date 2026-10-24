@@ -1,7 +1,6 @@
 import type { Mentor } from "@/contract/types";
-import { IconBriefcase, IconCap, IconLink, IconMail, IconMapPin } from "./Icons";
-
-const EMAIL_SUBJECT = encodeURIComponent("Advice from a Ridgeview student");
+import { AiBadge, CopyButton, mailtoHref } from "./ai";
+import { IconBriefcase, IconCap, IconChevronDown, IconLink, IconMail, IconMapPin } from "./Icons";
 
 function initials(name: string): string {
   return name
@@ -12,7 +11,13 @@ function initials(name: string): string {
     .toUpperCase();
 }
 
-export function MentorCard({ mentor }: { mentor: Mentor }) {
+interface MentorCardProps {
+  mentor: Mentor;
+  /** optional AI-drafted intro message for this mentor (from the cached advisor response) */
+  introMessage?: string;
+}
+
+export function MentorCard({ mentor, introMessage }: MentorCardProps) {
   const m = mentor;
   return (
     <article className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -106,6 +111,18 @@ export function MentorCard({ mentor }: { mentor: Mentor }) {
         </div>
       )}
 
+      {introMessage && (
+        <details className="group mt-3 rounded-lg border border-fuchsia-200 bg-fuchsia-50/60 p-2.5">
+          <summary className="flex cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden gap-2 text-sm font-medium text-fuchsia-900">
+            <AiBadge />
+            AI-drafted intro
+            <IconChevronDown className="ml-auto transition-transform group-open:rotate-180" />
+          </summary>
+          <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate-700">{introMessage}</p>
+          <CopyButton text={introMessage} className="mt-2 py-1.5" />
+        </details>
+      )}
+
       <div className="mt-auto flex gap-2 pt-4">
         {m.linkedinUrl && (
           <a
@@ -121,7 +138,7 @@ export function MentorCard({ mentor }: { mentor: Mentor }) {
         )}
         {m.email && (
           <a
-            href={`mailto:${m.email}?subject=${EMAIL_SUBJECT}`}
+            href={mailtoHref(m.email, introMessage)}
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-2 text-sm font-medium text-white hover:bg-indigo-700"
           >
             <IconMail />

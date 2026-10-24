@@ -2,18 +2,28 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import type { CountItem, PlanTerm, QuestionnaireAnswers, RecommendationResponse } from "@/contract/types";
-import { getRecommendations } from "@/lib-client/api";
-import { useHydrated, useStoredRaw } from "@/lib-client/hooks";
+import type {
+  AiErrorCode,
+  CountItem,
+  PlanTerm,
+  QuestionnaireAnswers,
+  RecommendationResponse,
+} from "@/contract/types";
+import { aiErrorCode, getAdvisor, getRecommendations } from "@/lib-client/api";
+import { useAiEnabled, useHydrated, useStoredRaw } from "@/lib-client/hooks";
 import {
+  ADVISOR_KEY,
   ANSWERS_KEY,
   RESULT_KEY,
   answersKey,
+  parseAdvisor,
   parseAnswers,
   parseResult,
+  saveAdvisor,
   saveAnswers,
   saveResult,
 } from "@/lib-client/storage";
+import { AdvisorCard, type AdvisorState } from "@/components/AdvisorCard";
 import { EvidenceBar } from "@/components/EvidenceBar";
 import { MentorCard } from "@/components/MentorCard";
 import { TermColumn } from "@/components/TermColumn";
@@ -54,7 +64,7 @@ export function PlanView() {
     return (
       <EmptyState
         title="No plan yet"
-        body="Answer three quick questions about your goal, interests and background, and we'll build a term-by-term plan from students like you."
+        body="Answer a few quick questions about your goal, interests and background, and we'll build a term-by-term plan from students like you."
       />
     );
   }
@@ -74,11 +84,64 @@ export function PlanView() {
   const choosePathway = (pathwayId: string | undefined) => {
     const next: QuestionnaireAnswers = { goal: answers.goal, interests: answers.interests, background: answers.background };
     if (pathwayId) next.pathwayId = pathwayId;
+    if (answers.about) next.about = answers.about;
     saveAnswers(next);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  return <PlanResult result={result} overridden={Boolean(answers.pathwayId)} onChoosePathway={choosePathway} />;
+  return (
+    <PlanResult
+      result={result}
+      answers={answers}
+      answersKey={key ?? ""}
+      overridden={Boolean(answers.pathwayId)}
+      onChoosePathway={choosePathway}
+    />
+  );
+}
+
+/**
+ * Loads the AI advisor for the current answers, separately from the plan so it never blocks it.
+ * Uses the dps:advisor sessionStorage cache keyed by answersKey.
+ */
+function useAdvisor(answers: QuestionnaireAnswers, key: string): { state: AdvisorState; retry: () => void } {
+  const aiEnabled = useAiEnabled();
+  const advisorRaw = useStoredRaw(ADVISOR_KEY);
+  const cached = useMemo(() => parseAdvisor(advisorRaw), [advisorRaw]);
+  const advisor = cached && cached.key === key ? cached.response : null;
+  const [failure, setFailure] = useState<{ key: string; code: AiErrorCode } | null>(null);
+  const [attempt, setAttempt] = useState(0);
+  const failedCode = failure && failure.key === key ? failure.code : null;
+
+  const hasAdvisor = advisor !== null;
+  const hasFailure = failedCode !== null;
+
+  useEffect(() => {
+    if (aiEnabled !== true || hasAdvisor || hasFailure) return;
+    const ctrl = new AbortController();
+    getAdvisor(answers, ctrl.signal)
+      .then((r) => saveAdvisor(key, r))
+      .catch((e: unknown) => {
+        if (!ctrl.signal.aborted) setFailure({ key, code: aiErrorCode(e) });
+      });
+    return () => ctrl.abort();
+  }, [aiEnabled, answers, key, attempt, hasAdvisor, hasFailure]);
+
+  const state: AdvisorState = advisor
+    ? { status: "ready", advisor }
+    : aiEnabled === false || failedCode === "not_configured"
+      ? { status: "off" }
+      : failedCode
+        ? { status: "error", code: failedCode }
+        : { status: "loading" };
+
+  return {
+    state,
+    retry: () => {
+      setFailure(null);
+      setAttempt((a) => a + 1);
+    },
+  };
 }
 
 function PlanSkeleton() {
@@ -102,11 +165,20 @@ function PlanSkeleton() {
 
 interface PlanResultProps {
   result: RecommendationResponse;
+  answers: QuestionnaireAnswers;
+  answersKey: string;
   overridden: boolean;
   onChoosePathway: (pathwayId: string | undefined) => void;
 }
 
-function PlanResult({ result, overridden, onChoosePathway }: PlanResultProps) {
+function PlanResult({ result, answers, answersKey: key, overridden, onChoosePathway }: PlanResultProps) {
+  const advisor = useAdvisor(answers, key);
+  const advisorResponse = advisor.state.status === "ready" ? advisor.state.advisor : null;
+  const tipsByTerm = useMemo(() => {
+    const map = new Map<number, string>();
+    for (const t of advisorResponse?.termTips ?? []) if (t.tip && !map.has(t.term)) map.set(t.term, t.tip);
+    return map;
+  }, [advisorResponse]);
   const [highlightGoal, setHighlightGoal] = useState(false);
   const [showMethod, setShowMethod] = useState(false);
   const years = useMemo(() => groupByYear(result.plan), [result.plan]);
@@ -192,6 +264,13 @@ function PlanResult({ result, overridden, onChoosePathway }: PlanResultProps) {
           </Card>
         </div>
 
+        <AdvisorCard
+          state={advisor.state}
+          major={result.major.major}
+          mentors={result.mentors}
+          onRetry={advisor.retry}
+        />
+
         {result.alternativeMajors.length > 0 && (
           <Card>
             <h2 className="font-semibold text-slate-900">Other majors similar students chose</h2>
@@ -275,7 +354,7 @@ function PlanResult({ result, overridden, onChoosePathway }: PlanResultProps) {
               <h3 className="mb-2 text-sm font-semibold uppercase tracking-wider text-slate-500">Year {year}</h3>
               <div className="grid gap-4 md:grid-cols-2">
                 {terms.map((t) => (
-                  <TermColumn key={t.term} term={t} highlightGoal={highlightGoal} />
+                  <TermColumn key={t.term} term={t} highlightGoal={highlightGoal} tip={tipsByTerm.get(t.term)} />
                 ))}
               </div>
             </div>
@@ -342,7 +421,13 @@ function PlanResult({ result, overridden, onChoosePathway }: PlanResultProps) {
           </div>
           <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {result.mentors.slice(0, 3).map((m) => (
-              <MentorCard key={m.id} mentor={m} />
+              <MentorCard
+                key={m.id}
+                mentor={m}
+                introMessage={
+                  advisorResponse?.mentorMessage?.mentorId === m.id ? advisorResponse.mentorMessage.message : undefined
+                }
+              />
             ))}
           </div>
         </section>

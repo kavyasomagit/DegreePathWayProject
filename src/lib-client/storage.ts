@@ -1,13 +1,20 @@
-import type { QuestionnaireAnswers, RecommendationResponse } from "@/contract/types";
+import type { AdvisorResponse, QuestionnaireAnswers, RecommendationResponse } from "@/contract/types";
 
 export const ANSWERS_KEY = "dps:answers";
 export const RESULT_KEY = "dps:result";
+export const ADVISOR_KEY = "dps:advisor";
 const CHANGE_EVENT = "dps-storage";
 
 /** Cached result, tagged with the request it answers so stale results are never shown. */
 export interface CachedResult {
   key: string;
   response: RecommendationResponse;
+}
+
+/** Cached AI advisor response, keyed by answersKey like the result cache. */
+export interface CachedAdvisor {
+  key: string;
+  response: AdvisorResponse;
 }
 
 export function safeParse<T>(raw: string | null): T | null {
@@ -59,7 +66,15 @@ export function parseAnswers(raw: string | null): QuestionnaireAnswers | null {
     interests: v.interests,
     background: isStringArray(v.background) ? v.background : [],
     ...(typeof v.pathwayId === "string" && v.pathwayId ? { pathwayId: v.pathwayId } : {}),
+    ...(typeof v.about === "string" && v.about.trim() ? { about: v.about } : {}),
   };
+}
+
+export function parseAdvisor(raw: string | null): CachedAdvisor | null {
+  const v = safeParse<CachedAdvisor>(raw);
+  if (!v || typeof v.key !== "string" || !v.response || typeof v.response.summary !== "string") return null;
+  if (!Array.isArray(v.response.termTips)) return null;
+  return v;
 }
 
 export function parseResult(raw: string | null): CachedResult | null {
@@ -75,7 +90,12 @@ export function answersKey(a: QuestionnaireAnswers): string {
     interests: [...a.interests].sort(),
     background: [...a.background].sort(),
     pathwayId: a.pathwayId ?? null,
+    about: a.about?.trim() || null,
   });
+}
+
+export function saveAdvisor(key: string, response: AdvisorResponse): void {
+  write(ADVISOR_KEY, { key, response } satisfies CachedAdvisor);
 }
 
 export function saveAnswers(answers: QuestionnaireAnswers): void {

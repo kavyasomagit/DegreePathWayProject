@@ -1,9 +1,32 @@
 import type {
+  AdvisorResponse,
+  AiErrorCode,
   MentorsResponse,
   OptionsResponse,
+  ProfileRequest,
+  ProfileResponse,
   QuestionnaireAnswers,
   RecommendationResponse,
 } from "@/contract/types";
+
+const AI_CODES: readonly AiErrorCode[] = ["not_configured", "invalid_key", "no_quota", "rate_limited", "timeout", "failed"];
+
+/** Error from an API call. `code` is set when the server returned an AiError. */
+export class ApiRequestError extends Error {
+  readonly status: number;
+  readonly code: AiErrorCode | null;
+  constructor(message: string, status: number, code: AiErrorCode | null) {
+    super(message);
+    this.name = "ApiRequestError";
+    this.status = status;
+    this.code = code;
+  }
+}
+
+/** AiErrorCode for any thrown value (network errors and unknown failures map to "failed"). */
+export function aiErrorCode(e: unknown): AiErrorCode {
+  return e instanceof ApiRequestError && e.code ? e.code : "failed";
+}
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, init);
@@ -14,13 +37,24 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
     body = null;
   }
   if (!res.ok) {
-    const message =
-      body && typeof body === "object" && "error" in body
-        ? String((body as { error: unknown }).error)
-        : `Request failed (${res.status})`;
-    throw new Error(message);
+    const obj = body && typeof body === "object" ? (body as Record<string, unknown>) : null;
+    const message = obj && "error" in obj ? String(obj.error) : `Request failed (${res.status})`;
+    const code =
+      obj && typeof obj.code === "string" && (AI_CODES as readonly string[]).includes(obj.code)
+        ? (obj.code as AiErrorCode)
+        : null;
+    throw new ApiRequestError(message, res.status, code);
   }
   return body as T;
+}
+
+function postJson<T>(url: string, body: unknown, signal?: AbortSignal): Promise<T> {
+  return request<T>(url, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(body),
+    signal,
+  });
 }
 
 export function getOptions(signal?: AbortSignal): Promise<OptionsResponse> {
@@ -31,12 +65,19 @@ export function getRecommendations(
   answers: QuestionnaireAnswers,
   signal?: AbortSignal,
 ): Promise<RecommendationResponse> {
-  return request<RecommendationResponse>("/api/recommendations", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(answers),
-    signal,
-  });
+  return postJson<RecommendationResponse>("/api/recommendations", answers, signal);
+}
+
+export function getAiStatus(signal?: AbortSignal): Promise<{ enabled: boolean }> {
+  return request<{ enabled: boolean }>("/api/ai-status", { signal });
+}
+
+export function parseProfile(body: ProfileRequest, signal?: AbortSignal): Promise<ProfileResponse> {
+  return postJson<ProfileResponse>("/api/profile", body, signal);
+}
+
+export function getAdvisor(answers: QuestionnaireAnswers, signal?: AbortSignal): Promise<AdvisorResponse> {
+  return postJson<AdvisorResponse>("/api/advisor", answers, signal);
 }
 
 export interface MentorQuery {

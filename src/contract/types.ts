@@ -40,6 +40,51 @@ export interface QuestionnaireAnswers {
   background: string[];
   /** optional: force the plan for this major instead of the recommended one */
   pathwayId?: string;
+  /** optional free text from the "Tell us more" step (max 1000 chars); used by the AI advisor */
+  about?: string;
+}
+
+// ---------------------------------------------------------------- AI (OpenAI) features
+//   POST /api/profile  body: ProfileRequest -> ProfileResponse  (503 -> AiError)
+//   POST /api/advisor  body: QuestionnaireAnswers -> AdvisorResponse (503 -> AiError)
+//   GET  /api/ai-status -> { enabled: boolean }
+
+export type AiErrorCode = "not_configured" | "invalid_key" | "no_quota" | "rate_limited" | "timeout" | "failed";
+
+export interface AiError {
+  error: string;
+  code: AiErrorCode;
+}
+
+export interface ProfileRequest {
+  text: string;
+  goal?: string;
+}
+
+export interface ProfileResponse {
+  /** interest tags the model found in the text (subset of OptionsResponse.interests) */
+  interests: Option[];
+  /** background tags the model found in the text */
+  background: Option[];
+  /** set when the text describes a career that differs from the chosen goal */
+  suggestedGoal: Option | null;
+  /** one sentence describing what the model understood */
+  summary: string;
+  model: string;
+}
+
+export interface AdvisorTip {
+  term: number;
+  label: string;
+  tip: string;
+}
+
+export interface AdvisorResponse {
+  summary: string;
+  whyThisMajor: string;
+  termTips: AdvisorTip[];
+  mentorMessage: { mentorId: string; mentorName: string; message: string } | null;
+  model: string;
 }
 
 /** Why a recommendation was made. `text` is ready to display. */

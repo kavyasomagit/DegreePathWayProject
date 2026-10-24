@@ -1,19 +1,24 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import type { OptionsResponse, QuestionnaireAnswers } from "@/contract/types";
-import { getOptions } from "@/lib-client/api";
-import { useHydrated, useStoredRaw } from "@/lib-client/hooks";
+import type { Option, OptionsResponse, ProfileResponse, QuestionnaireAnswers } from "@/contract/types";
+import { ApiRequestError, aiErrorCode, getOptions, parseProfile } from "@/lib-client/api";
+import { useAiEnabled, useHydrated, useStoredRaw } from "@/lib-client/hooks";
 import { ANSWERS_KEY, clearResult, parseAnswers, saveAnswers } from "@/lib-client/storage";
 import { Chip } from "@/components/Chip";
 import { StepIndicator } from "@/components/StepIndicator";
-import { IconArrowLeft, IconArrowRight, IconCheck, IconSearch } from "@/components/Icons";
+import { IconAlert, IconArrowLeft, IconArrowRight, IconCheck, IconSearch, IconSparkle } from "@/components/Icons";
+import { AiBadge, aiErrorMessage } from "@/components/ai";
 import { ErrorState, Skeleton, btnPrimary, btnSecondary } from "@/components/ui";
 
-const STEPS = ["Goal", "Interests", "Background"];
+const STEPS = ["Goal", "Interests", "Background", "About you"];
 const MAX_INTERESTS = 4;
 const MAX_BACKGROUND = 3;
+/** caps after merging AI-detected tags (match the server's limits) */
+const MAX_MERGED_INTERESTS = 6;
+const MAX_MERGED_BACKGROUND = 10;
+const MAX_ABOUT = 1000;
 
 export function Questionnaire() {
   const hydrated = useHydrated();
@@ -82,6 +87,15 @@ function QuestionnaireForm({ options, initial }: FormProps) {
   const [query, setQuery] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
+  // Step 4: free text + optional AI analysis
+  const aiEnabled = useAiEnabled();
+  const [about, setAbout] = useState(initial?.about ?? "");
+  const [profile, setProfile] = useState<ProfileResponse | null>(null);
+  const [excluded, setExcluded] = useState<Set<string>>(() => new Set());
+  const [analyzing, setAnalyzing] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
+  const analyzeRun = useRef(0);
+
   const filteredGoals = useMemo(() => {
     const q = query.trim().toLowerCase();
     return q ? options.goals.filter((g) => g.label.toLowerCase().includes(q)) : options.goals;
@@ -92,12 +106,59 @@ function QuestionnaireForm({ options, initial }: FormProps) {
 
   const canNext = step === 0 ? goal !== "" : step === 1 ? interests.length >= 1 : true;
 
-  function submit(bg: string[]) {
+  /** Submit. `useAbout` = include the step-4 text and still-selected AI-detected tags (false for "Skip"). */
+  function submit(useAbout: boolean) {
     setSubmitting(true);
-    saveAnswers({ goal, interests, background: bg });
+    const kept = (list: Option[] | undefined) =>
+      useAbout && list ? list.map((o) => o.id).filter((id) => !excluded.has(id)) : [];
+    const union = (a: string[], b: string[], max: number) => [...new Set([...a, ...b])].slice(0, max);
+    const text = about.trim().slice(0, MAX_ABOUT);
+    const answers: QuestionnaireAnswers = {
+      goal,
+      interests: union(interests, kept(profile?.interests), MAX_MERGED_INTERESTS),
+      background: union(background, kept(profile?.background), MAX_MERGED_BACKGROUND),
+    };
+    if (useAbout && text) answers.about = text;
+    saveAnswers(answers);
     clearResult();
     router.push("/plan");
   }
+
+  async function analyze() {
+    const text = about.trim();
+    if (!text || analyzing) return;
+    const run = ++analyzeRun.current;
+    setAnalyzing(true);
+    setAiError(null);
+    try {
+      const res = await parseProfile({ text, goal: goal || undefined });
+      if (run !== analyzeRun.current) return;
+      setProfile(res);
+      setExcluded(new Set());
+    } catch (e: unknown) {
+      if (run !== analyzeRun.current) return;
+      // 400s carry a specific validation message (empty / too long); everything else gets a friendly message
+      setAiError(
+        e instanceof ApiRequestError && e.status === 400 ? e.message : aiErrorMessage(aiErrorCode(e)),
+      );
+    } finally {
+      if (run === analyzeRun.current) setAnalyzing(false);
+    }
+  }
+
+  const toggleDetected = (id: string) =>
+    setExcluded((s) => {
+      const next = new Set(s);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+
+  const suggestedGoal =
+    profile?.suggestedGoal && profile.suggestedGoal.id !== goal && options.goals.some((g) => g.id === profile.suggestedGoal?.id)
+      ? profile.suggestedGoal
+      : null;
+  const lastStep = STEPS.length - 1;
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -108,8 +169,8 @@ function QuestionnaireForm({ options, initial }: FormProps) {
         onSubmit={(e) => {
           e.preventDefault();
           if (!canNext) return;
-          if (step < STEPS.length - 1) setStep(step + 1);
-          else submit(background);
+          if (step < lastStep) setStep(step + 1);
+          else submit(true);
         }}
       >
         {step === 0 && (
@@ -212,6 +273,120 @@ function QuestionnaireForm({ options, initial }: FormProps) {
           </fieldset>
         )}
 
+        {step === 3 && (
+          <fieldset>
+            <legend className="text-2xl font-bold text-slate-900">Tell us more about yourself (optional)</legend>
+            <p className="mt-1 text-slate-600">
+              A few sentences help personalize your plan. You can skip this step.
+            </p>
+            <label htmlFor="about" className="sr-only">
+              About you
+            </label>
+            <textarea
+              id="about"
+              value={about}
+              maxLength={MAX_ABOUT}
+              rows={5}
+              onChange={(e) => setAbout(e.target.value.slice(0, MAX_ABOUT))}
+              placeholder="Hobbies, favorite classes, jobs or projects, what you're unsure about…"
+              aria-describedby="about-count about-privacy"
+              className="mt-5 w-full resize-y rounded-lg border border-slate-300 px-3 py-2.5 text-sm placeholder:text-slate-400 focus:border-indigo-500"
+            />
+            <div className="mt-1 flex flex-wrap items-start justify-between gap-2">
+              <p id="about-privacy" className="max-w-lg text-xs text-slate-500">
+                Your text is sent to OpenAI to personalize your plan. Don&apos;t include sensitive details like ID
+                numbers or health information.
+              </p>
+              <p
+                id="about-count"
+                className={`text-xs font-semibold tabular-nums ${about.length >= MAX_ABOUT ? "text-amber-700" : "text-slate-500"}`}
+                aria-live="polite"
+              >
+                {about.length}/{MAX_ABOUT}
+              </p>
+            </div>
+
+            {aiEnabled && (
+              <button
+                type="button"
+                onClick={analyze}
+                disabled={analyzing || about.trim() === ""}
+                className={`${btnSecondary} mt-4 border-fuchsia-300 text-fuchsia-800 hover:bg-fuchsia-50`}
+              >
+                <IconSparkle className={analyzing ? "animate-pulse" : ""} />
+                {analyzing ? "Analyzing…" : "Analyze with AI"}
+              </button>
+            )}
+
+            {aiError && (
+              <p role="alert" className="mt-4 flex items-start gap-2 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">
+                <IconAlert className="mt-0.5 shrink-0" />
+                {aiError}
+              </p>
+            )}
+
+            {profile && (
+              <div className="mt-5 rounded-lg border border-fuchsia-200 bg-fuchsia-50/50 p-4" aria-live="polite">
+                <div className="flex items-start gap-2">
+                  <AiBadge className="mt-0.5 shrink-0" />
+                  <p className="text-sm text-slate-800">{profile.summary}</p>
+                </div>
+                {profile.interests.length + profile.background.length > 0 ? (
+                  <>
+                    <p className="mt-4 text-sm font-semibold text-slate-900">We picked up:</p>
+                    <p className="text-xs text-slate-500">Tap a tag to leave it out.</p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {[
+                        ...profile.interests.map((o) => ({ o, chosen: interests.includes(o.id) })),
+                        ...profile.background.map((o) => ({ o, chosen: background.includes(o.id) })),
+                      ].map(({ o, chosen }) =>
+                        chosen ? (
+                          <span
+                            key={o.id}
+                            className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm text-slate-500"
+                          >
+                            <IconCheck width={14} height={14} />
+                            {o.label}
+                            <span className="text-xs">(already selected)</span>
+                          </span>
+                        ) : (
+                          <Chip
+                            key={o.id}
+                            label={o.label}
+                            selected={!excluded.has(o.id)}
+                            onToggle={() => toggleDetected(o.id)}
+                          />
+                        ),
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <p className="mt-3 text-sm text-slate-600">No extra interests or background tags found.</p>
+                )}
+                {suggestedGoal && (
+                  <div className="mt-4 flex flex-wrap items-center gap-3 rounded-lg bg-white p-3 ring-1 ring-fuchsia-200">
+                    <p className="text-sm text-slate-800">
+                      Your description sounds like <strong>{suggestedGoal.label}</strong>. Switch my goal?
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setGoal(suggestedGoal.id)}
+                      className="rounded-lg bg-fuchsia-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-fuchsia-800"
+                    >
+                      Switch to {suggestedGoal.label}
+                    </button>
+                  </div>
+                )}
+                {profile.suggestedGoal && profile.suggestedGoal.id === goal && (
+                  <p className="mt-4 flex items-center gap-1.5 text-sm text-emerald-800">
+                    <IconCheck /> Goal set to {profile.suggestedGoal.label}.
+                  </p>
+                )}
+              </div>
+            )}
+          </fieldset>
+        )}
+
         <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-5">
           <button
             type="button"
@@ -223,18 +398,23 @@ function QuestionnaireForm({ options, initial }: FormProps) {
             Back
           </button>
           <div className="flex gap-2">
-            {step === 2 && (
+            {(step === 2 || step === 3) && (
               <button
                 type="button"
-                onClick={() => submit([])}
+                onClick={() => {
+                  if (step === 2) {
+                    setBackground([]);
+                    setStep(3);
+                  } else submit(false);
+                }}
                 disabled={submitting}
                 className="rounded-lg px-4 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-100"
               >
                 Skip
               </button>
             )}
-            <button type="submit" disabled={!canNext || submitting} className={btnPrimary}>
-              {step === 2 ? (submitting ? "Building plan…" : "Build my plan") : "Next"}
+            <button type="submit" disabled={!canNext || submitting || analyzing} className={btnPrimary}>
+              {step === lastStep ? (submitting ? "Building plan…" : "See my plan") : "Next"}
               <IconArrowRight />
             </button>
           </div>

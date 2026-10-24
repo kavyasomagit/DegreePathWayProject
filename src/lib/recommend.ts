@@ -112,6 +112,7 @@ export function normalizeAnswers(body: unknown): QuestionnaireAnswers {
     background: pick(b.background, db.backgroundById, 10),
   };
   if (typeof b.pathwayId === "string" && db.pathwayById.has(b.pathwayId)) answers.pathwayId = b.pathwayId;
+  if (typeof b.about === "string" && b.about.trim()) answers.about = b.about.trim().slice(0, 1000);
   return answers;
 }
 

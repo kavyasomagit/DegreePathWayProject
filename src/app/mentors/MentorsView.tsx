@@ -5,7 +5,15 @@ import { useEffect, useMemo, useState } from "react";
 import type { MentorsResponse, Option } from "@/contract/types";
 import { buildMentorQuery, getMentors, getOptions } from "@/lib-client/api";
 import { useHydrated, useStoredRaw } from "@/lib-client/hooks";
-import { ANSWERS_KEY, RESULT_KEY, parseAnswers, parseResult } from "@/lib-client/storage";
+import {
+  ADVISOR_KEY,
+  ANSWERS_KEY,
+  RESULT_KEY,
+  answersKey,
+  parseAdvisor,
+  parseAnswers,
+  parseResult,
+} from "@/lib-client/storage";
 import { MentorCard } from "@/components/MentorCard";
 import { ErrorState, Skeleton, btnPrimary } from "@/components/ui";
 
@@ -17,6 +25,13 @@ export function MentorsView() {
   const resultRaw = useStoredRaw(RESULT_KEY);
   const answers = useMemo(() => parseAnswers(answersRaw), [answersRaw]);
   const cached = useMemo(() => parseResult(resultRaw), [resultRaw]);
+  const advisorRaw = useStoredRaw(ADVISOR_KEY);
+  const cachedAdvisor = useMemo(() => parseAdvisor(advisorRaw), [advisorRaw]);
+  // only use the AI-drafted intro if it was written for the current answers
+  const intro =
+    answers && cachedAdvisor && cachedAdvisor.key === answersKey(answers)
+      ? cachedAdvisor.response.mentorMessage
+      : null;
   const pathwayId = answers ? (cached?.response.major.pathwayId ?? answers.pathwayId) : undefined;
 
   const [mentorsOnly, setMentorsOnly] = useState(false);
@@ -137,7 +152,11 @@ export function MentorsView() {
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {current.data.mentors.map((m) => (
-            <MentorCard key={m.id} mentor={m} />
+            <MentorCard
+              key={m.id}
+              mentor={m}
+              introMessage={intro && intro.mentorId === m.id ? intro.message : undefined}
+            />
           ))}
         </div>
       )}

@@ -1,0 +1,3581 @@
+{
+  "_note": "SYNTHETIC DATA for the Degree Pathway Suggester POC (fictional Ridgeview State University). Course catalog; prereqs are AND-only.",
+  "courses": [
+    {
+      "code": "UNIV 101",
+      "dept": "UNIV",
+      "number": 101,
+      "title": "First-Year Seminar: Thriving at Ridgeview",
+      "credits": 1,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "hr_specialist",
+        "mental_health_counselor"
+      ],
+      "description": "Academic skills, campus resources, and early career exploration for new students."
+    },
+    {
+      "code": "ENGL 101",
+      "dept": "ENGL",
+      "number": 101,
+      "title": "Composition I",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "marketing_specialist",
+        "consultant"
+      ],
+      "description": "Academic writing focused on argument, evidence, and revision."
+    },
+    {
+      "code": "ENGL 102",
+      "dept": "ENGL",
+      "number": 102,
+      "title": "Composition II: Research Writing",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [
+        "ENGL 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "research",
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "economist_policy_analyst"
+      ],
+      "description": "Research-based writing with source evaluation and citation."
+    },
+    {
+      "code": "COMM 101",
+      "dept": "COMM",
+      "number": 101,
+      "title": "Public Speaking",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "marketing_media",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "consultant",
+        "product_manager",
+        "marketing_specialist"
+      ],
+      "description": "Preparing and delivering informative and persuasive presentations."
+    },
+    {
+      "code": "MATH 140",
+      "dept": "MATH",
+      "number": 140,
+      "title": "Applied Calculus for Business",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "mathematics",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "business_analyst",
+        "financial_analyst"
+      ],
+      "description": "Derivatives and optimization applied to cost, revenue, and growth models."
+    },
+    {
+      "code": "MATH 151",
+      "dept": "MATH",
+      "number": 151,
+      "title": "Calculus I",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "mechanical_engineer",
+        "data_scientist"
+      ],
+      "description": "Limits, derivatives, and an introduction to integration."
+    },
+    {
+      "code": "MATH 152",
+      "dept": "MATH",
+      "number": 152,
+      "title": "Calculus II",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [
+        "MATH 151"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "ml_engineer",
+        "research_scientist"
+      ],
+      "description": "Integration techniques, sequences, and series."
+    },
+    {
+      "code": "STAT 210",
+      "dept": "STAT",
+      "number": 210,
+      "title": "Introduction to Statistics",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "data_scientist",
+        "market_research_analyst",
+        "public_health_analyst"
+      ],
+      "description": "Descriptive statistics, probability, sampling, and hypothesis testing."
+    },
+    {
+      "code": "CS 101",
+      "dept": "CS",
+      "number": 101,
+      "title": "Introduction to Programming (Python)",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "programming"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "data_analyst",
+        "data_scientist"
+      ],
+      "description": "Variables, control flow, functions, and basic data structures in Python."
+    },
+    {
+      "code": "CHEM 111",
+      "dept": "CHEM",
+      "number": 111,
+      "title": "General Chemistry I",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "chemistry",
+        "life_sciences"
+      ],
+      "relevantGoals": [
+        "physician",
+        "registered_nurse",
+        "research_scientist"
+      ],
+      "description": "Atomic structure, bonding, and stoichiometry with laboratory."
+    },
+    {
+      "code": "CHEM 112",
+      "dept": "CHEM",
+      "number": 112,
+      "title": "General Chemistry II",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [
+        "CHEM 111"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "chemistry"
+      ],
+      "relevantGoals": [
+        "physician",
+        "research_scientist"
+      ],
+      "description": "Kinetics, equilibrium, thermodynamics, and electrochemistry with laboratory."
+    },
+    {
+      "code": "BIOL 111",
+      "dept": "BIOL",
+      "number": 111,
+      "title": "Principles of Biology I",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "life_sciences"
+      ],
+      "relevantGoals": [
+        "physician",
+        "registered_nurse",
+        "clinical_research_coordinator"
+      ],
+      "description": "Cell biology, genetics, and evolution with laboratory."
+    },
+    {
+      "code": "BIOL 112",
+      "dept": "BIOL",
+      "number": 112,
+      "title": "Principles of Biology II",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [
+        "BIOL 111"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "life_sciences"
+      ],
+      "relevantGoals": [
+        "physician",
+        "research_scientist"
+      ],
+      "description": "Organismal biology, physiology, and ecology with laboratory."
+    },
+    {
+      "code": "PHYS 151",
+      "dept": "PHYS",
+      "number": 151,
+      "title": "Physics I: Mechanics",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [
+        "MATH 151"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "engineering_design",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "hardware_engineer",
+        "physician"
+      ],
+      "description": "Calculus-based kinematics, forces, energy, and momentum."
+    },
+    {
+      "code": "PHYS 152",
+      "dept": "PHYS",
+      "number": 152,
+      "title": "Physics II: Electricity & Magnetism",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [
+        "PHYS 151",
+        "MATH 152"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "engineering_design",
+        "robotics_hardware"
+      ],
+      "relevantGoals": [
+        "hardware_engineer",
+        "mechanical_engineer",
+        "physician"
+      ],
+      "description": "Electric fields, circuits, magnetism, and waves."
+    },
+    {
+      "code": "PSYC 101",
+      "dept": "PSYC",
+      "number": 101,
+      "title": "Introduction to Psychology",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "mental_health_counselor",
+        "ux_researcher",
+        "hr_specialist",
+        "registered_nurse"
+      ],
+      "description": "Survey of perception, learning, memory, development, and mental health."
+    },
+    {
+      "code": "ECON 101",
+      "dept": "ECON",
+      "number": 101,
+      "title": "Principles of Microeconomics",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "economics_policy",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "financial_analyst",
+        "consultant"
+      ],
+      "description": "Supply and demand, consumer choice, firms, and market structure."
+    },
+    {
+      "code": "ECON 102",
+      "dept": "ECON",
+      "number": 102,
+      "title": "Principles of Macroeconomics",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "economics_policy",
+        "finance_investing"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "financial_analyst",
+        "investment_banking_analyst"
+      ],
+      "description": "GDP, inflation, unemployment, and monetary and fiscal policy."
+    },
+    {
+      "code": "HIST 101",
+      "dept": "HIST",
+      "number": 101,
+      "title": "United States History",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "social_impact",
+        "economics_policy"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst"
+      ],
+      "description": "Political, social, and economic history of the United States."
+    },
+    {
+      "code": "PHIL 101",
+      "dept": "PHIL",
+      "number": 101,
+      "title": "Introduction to Ethics",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "physician",
+        "mental_health_counselor",
+        "consultant"
+      ],
+      "description": "Moral theories applied to issues in technology, medicine, and business."
+    },
+    {
+      "code": "SOC 101",
+      "dept": "SOC",
+      "number": 101,
+      "title": "Introduction to Sociology",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "social_impact",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "hr_specialist",
+        "ux_researcher"
+      ],
+      "description": "Social structure, inequality, institutions, and group behavior."
+    },
+    {
+      "code": "POLS 101",
+      "dept": "POLS",
+      "number": 101,
+      "title": "American Government",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "economics_policy",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "public_health_analyst"
+      ],
+      "description": "Institutions, elections, and policymaking in the United States."
+    },
+    {
+      "code": "ART 100",
+      "dept": "ART",
+      "number": 100,
+      "title": "Art History Survey",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "gen_ed",
+      "tags": [
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "ux_designer"
+      ],
+      "description": "Major movements in visual art and design from antiquity to today."
+    },
+    {
+      "code": "MATH 221",
+      "dept": "MATH",
+      "number": 221,
+      "title": "Linear Algebra",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "MATH 152"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "mathematics",
+        "ai_ml"
+      ],
+      "relevantGoals": [
+        "ml_engineer",
+        "data_scientist",
+        "research_scientist"
+      ],
+      "description": "Vectors, matrices, eigenvalues, and linear transformations."
+    },
+    {
+      "code": "MATH 230",
+      "dept": "MATH",
+      "number": 230,
+      "title": "Discrete Mathematics",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "MATH 151"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "mathematics",
+        "programming"
+      ],
+      "relevantGoals": [
+        "software_engineer"
+      ],
+      "description": "Logic, proofs, sets, combinatorics, and graph theory."
+    },
+    {
+      "code": "MATH 251",
+      "dept": "MATH",
+      "number": 251,
+      "title": "Calculus III",
+      "credits": 4,
+      "level": 200,
+      "prereqs": [
+        "MATH 152"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "mathematics",
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "research_scientist"
+      ],
+      "description": "Multivariable calculus, partial derivatives, and vector calculus."
+    },
+    {
+      "code": "MATH 310",
+      "dept": "MATH",
+      "number": 310,
+      "title": "Differential Equations",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MATH 152"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "mathematics",
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "hardware_engineer"
+      ],
+      "description": "Ordinary differential equations and their engineering applications."
+    },
+    {
+      "code": "MATH 340",
+      "dept": "MATH",
+      "number": 340,
+      "title": "Probability Theory",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MATH 152"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "mathematics",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "data_scientist",
+        "ml_engineer",
+        "investment_banking_analyst"
+      ],
+      "description": "Random variables, distributions, expectation, and limit theorems."
+    },
+    {
+      "code": "STAT 310",
+      "dept": "STAT",
+      "number": 310,
+      "title": "Applied Regression Analysis",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "data_scientist",
+        "business_analyst",
+        "economist_policy_analyst",
+        "market_research_analyst"
+      ],
+      "description": "Linear and logistic regression, model diagnostics, and interpretation."
+    },
+    {
+      "code": "STAT 320",
+      "dept": "STAT",
+      "number": 320,
+      "title": "Design of Experiments",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "data_statistics",
+        "research"
+      ],
+      "relevantGoals": [
+        "ux_researcher",
+        "research_scientist",
+        "clinical_research_coordinator",
+        "product_manager"
+      ],
+      "description": "Randomized experiments, A/B testing, ANOVA, and power analysis."
+    },
+    {
+      "code": "STAT 360",
+      "dept": "STAT",
+      "number": 360,
+      "title": "Biostatistics",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "data_statistics",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "clinical_research_coordinator",
+        "physician",
+        "nurse_practitioner"
+      ],
+      "description": "Statistical methods for clinical trials, cohort studies, and health data."
+    },
+    {
+      "code": "CS 120",
+      "dept": "CS",
+      "number": 120,
+      "title": "Programming II: Object-Oriented Design",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [
+        "CS 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "programming"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "ml_engineer"
+      ],
+      "description": "Classes, interfaces, testing, and design patterns."
+    },
+    {
+      "code": "CS 201",
+      "dept": "CS",
+      "number": 201,
+      "title": "Data Structures",
+      "credits": 4,
+      "level": 200,
+      "prereqs": [
+        "CS 120"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "programming"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "ml_engineer"
+      ],
+      "description": "Lists, trees, hash tables, graphs, and complexity analysis."
+    },
+    {
+      "code": "CS 210",
+      "dept": "CS",
+      "number": 210,
+      "title": "Computer Organization",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "CS 120"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "programming",
+        "robotics_hardware"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "hardware_engineer"
+      ],
+      "description": "Machine-level representation, assembly, memory, and processor design."
+    },
+    {
+      "code": "CS 301",
+      "dept": "CS",
+      "number": 301,
+      "title": "Algorithms",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "CS 201",
+        "MATH 230"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "programming",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "ml_engineer",
+        "research_scientist"
+      ],
+      "description": "Algorithm design paradigms, graph algorithms, and NP-completeness."
+    },
+    {
+      "code": "CS 320",
+      "dept": "CS",
+      "number": 320,
+      "title": "Software Engineering",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "CS 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "programming",
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "product_manager"
+      ],
+      "description": "Team-based development, version control, testing, and agile practices."
+    },
+    {
+      "code": "CS 330",
+      "dept": "CS",
+      "number": 330,
+      "title": "Database Systems",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "CS 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "programming",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "data_analyst",
+        "data_scientist",
+        "business_analyst"
+      ],
+      "description": "Relational modeling, SQL, indexing, and transactions."
+    },
+    {
+      "code": "CS 350",
+      "dept": "CS",
+      "number": 350,
+      "title": "Human-Computer Interaction",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "CS 120"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "programming",
+        "visual_design",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "product_manager",
+        "ux_designer",
+        "ux_researcher"
+      ],
+      "description": "User-centered design, prototyping, and usability evaluation."
+    },
+    {
+      "code": "CS 370",
+      "dept": "CS",
+      "number": 370,
+      "title": "Computer Security",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "CS 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "programming"
+      ],
+      "relevantGoals": [
+        "software_engineer"
+      ],
+      "description": "Threat models, cryptography basics, and secure software practices."
+    },
+    {
+      "code": "CS 450",
+      "dept": "CS",
+      "number": 450,
+      "title": "Machine Learning",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "CS 201",
+        "MATH 221",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "ai_ml",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "ml_engineer",
+        "data_scientist",
+        "research_scientist"
+      ],
+      "description": "Supervised and unsupervised learning, model evaluation, and regularization."
+    },
+    {
+      "code": "CS 460",
+      "dept": "CS",
+      "number": 460,
+      "title": "Deep Learning",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "CS 450"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "ai_ml"
+      ],
+      "relevantGoals": [
+        "ml_engineer",
+        "research_scientist"
+      ],
+      "description": "Neural networks, CNNs, transformers, and training at scale."
+    },
+    {
+      "code": "CS 490",
+      "dept": "CS",
+      "number": 490,
+      "title": "Senior Capstone Project",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "CS 320"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "programming",
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "product_manager"
+      ],
+      "description": "Semester-long team software project with an external client."
+    },
+    {
+      "code": "DS 101",
+      "dept": "DS",
+      "number": 101,
+      "title": "Introduction to Data Science",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics",
+        "programming"
+      ],
+      "relevantGoals": [
+        "data_scientist",
+        "data_analyst"
+      ],
+      "description": "The data science lifecycle from question to communicated result."
+    },
+    {
+      "code": "DS 201",
+      "dept": "DS",
+      "number": 201,
+      "title": "Data Wrangling & Visualization",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "DS 101",
+        "CS 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics",
+        "programming"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "data_scientist"
+      ],
+      "description": "Cleaning, reshaping, and visualizing messy real-world data in Python."
+    },
+    {
+      "code": "DS 301",
+      "dept": "DS",
+      "number": 301,
+      "title": "Statistical Learning",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "DS 201",
+        "STAT 310",
+        "MATH 221"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "ai_ml",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "data_scientist",
+        "ml_engineer"
+      ],
+      "description": "Resampling, regularization, trees, and ensemble methods."
+    },
+    {
+      "code": "DS 320",
+      "dept": "DS",
+      "number": 320,
+      "title": "Data Storytelling & Dashboards",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "DS 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "data_statistics",
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "business_analyst",
+        "product_manager"
+      ],
+      "description": "Communicating insights with dashboards, narratives, and visual design."
+    },
+    {
+      "code": "DS 490",
+      "dept": "DS",
+      "number": 490,
+      "title": "Data Science Capstone",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "DS 301"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics",
+        "research"
+      ],
+      "relevantGoals": [
+        "data_scientist",
+        "data_analyst"
+      ],
+      "description": "End-to-end project with a community or industry data partner."
+    },
+    {
+      "code": "BUS 101",
+      "dept": "BUS",
+      "number": 101,
+      "title": "Introduction to Business",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "business_strategy",
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "business_analyst",
+        "consultant",
+        "product_manager"
+      ],
+      "description": "Survey of management, marketing, finance, and operations."
+    },
+    {
+      "code": "BUS 220",
+      "dept": "BUS",
+      "number": 220,
+      "title": "Organizational Behavior",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "business_strategy",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "hr_specialist",
+        "consultant"
+      ],
+      "description": "Motivation, teams, leadership, and culture in organizations."
+    },
+    {
+      "code": "BUS 301",
+      "dept": "BUS",
+      "number": 301,
+      "title": "Operations Management",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "BUS 101",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "business_strategy",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "business_analyst",
+        "consultant",
+        "manufacturing_engineer"
+      ],
+      "description": "Process design, quality, inventory, and supply chains."
+    },
+    {
+      "code": "BUS 320",
+      "dept": "BUS",
+      "number": 320,
+      "title": "Human Resource Management",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "BUS 220"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "business_strategy",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "hr_specialist"
+      ],
+      "description": "Recruiting, compensation, performance management, and employment law."
+    },
+    {
+      "code": "BUS 330",
+      "dept": "BUS",
+      "number": 330,
+      "title": "Project Management",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "BUS 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "product_manager",
+        "consultant",
+        "manufacturing_engineer"
+      ],
+      "description": "Scoping, scheduling, risk, and stakeholder management for projects."
+    },
+    {
+      "code": "BUS 401",
+      "dept": "BUS",
+      "number": 401,
+      "title": "Strategic Management",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "BUS 101",
+        "ACCT 201"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "consultant",
+        "product_manager"
+      ],
+      "description": "Competitive strategy and case analysis of real firms."
+    },
+    {
+      "code": "ACCT 201",
+      "dept": "ACCT",
+      "number": 201,
+      "title": "Financial Accounting",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "finance_investing",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "investment_banking_analyst",
+        "business_analyst"
+      ],
+      "description": "Financial statements, the accounting cycle, and reporting standards."
+    },
+    {
+      "code": "ACCT 202",
+      "dept": "ACCT",
+      "number": 202,
+      "title": "Managerial Accounting",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "ACCT 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "finance_investing"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "consultant"
+      ],
+      "description": "Cost behavior, budgeting, and decision-making with accounting data."
+    },
+    {
+      "code": "MKTG 201",
+      "dept": "MKTG",
+      "number": 201,
+      "title": "Principles of Marketing",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "marketing_media",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "marketing_specialist",
+        "market_research_analyst",
+        "product_manager"
+      ],
+      "description": "Segmentation, positioning, pricing, and promotion."
+    },
+    {
+      "code": "MKTG 310",
+      "dept": "MKTG",
+      "number": 310,
+      "title": "Consumer Behavior",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MKTG 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "marketing_media",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "market_research_analyst",
+        "marketing_specialist",
+        "ux_researcher"
+      ],
+      "description": "Psychological and social drivers of purchase decisions."
+    },
+    {
+      "code": "MKTG 320",
+      "dept": "MKTG",
+      "number": 320,
+      "title": "Digital Marketing & Social Media",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MKTG 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "marketing_specialist",
+        "graphic_designer"
+      ],
+      "description": "Search, social, email, and content marketing with campaign metrics."
+    },
+    {
+      "code": "MKTG 330",
+      "dept": "MKTG",
+      "number": 330,
+      "title": "Marketing Research",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MKTG 201",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "marketing_media",
+        "data_statistics",
+        "research"
+      ],
+      "relevantGoals": [
+        "market_research_analyst",
+        "data_analyst"
+      ],
+      "description": "Survey design, sampling, focus groups, and analysis of market data."
+    },
+    {
+      "code": "ENTR 201",
+      "dept": "ENTR",
+      "number": 201,
+      "title": "Foundations of Entrepreneurship",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "entrepreneurship",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "product_manager",
+        "consultant"
+      ],
+      "description": "Opportunity recognition, business models, and startup basics."
+    },
+    {
+      "code": "ENTR 310",
+      "dept": "ENTR",
+      "number": 310,
+      "title": "Lean Startup Lab",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ENTR 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "product_manager",
+        "ux_designer"
+      ],
+      "description": "Customer discovery, MVPs, and rapid experimentation."
+    },
+    {
+      "code": "ENTR 410",
+      "dept": "ENTR",
+      "number": 410,
+      "title": "Venture Launch Practicum",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "ENTR 310"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "entrepreneurship",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "product_manager",
+        "consultant"
+      ],
+      "description": "Teams build and pitch a venture to local investors."
+    },
+    {
+      "code": "BUAN 210",
+      "dept": "BUAN",
+      "number": 210,
+      "title": "SQL & Data Management for Business",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics",
+        "programming"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "business_analyst"
+      ],
+      "description": "Querying, joining, and modeling business data with SQL."
+    },
+    {
+      "code": "BUAN 220",
+      "dept": "BUAN",
+      "number": 220,
+      "title": "Spreadsheet Modeling",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "business_strategy",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "business_analyst",
+        "consultant"
+      ],
+      "description": "Advanced spreadsheet modeling, scenario analysis, and automation."
+    },
+    {
+      "code": "BUAN 310",
+      "dept": "BUAN",
+      "number": 310,
+      "title": "Predictive Analytics",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "STAT 310"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics",
+        "ai_ml"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "business_analyst",
+        "data_scientist"
+      ],
+      "description": "Forecasting and classification models for business decisions."
+    },
+    {
+      "code": "BUAN 320",
+      "dept": "BUAN",
+      "number": 320,
+      "title": "Data Visualization for Business",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "BUAN 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics",
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "business_analyst"
+      ],
+      "description": "Dashboards and visual analytics with BI tools."
+    },
+    {
+      "code": "BUAN 330",
+      "dept": "BUAN",
+      "number": 330,
+      "title": "Decision Modeling & Optimization",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "BUAN 220",
+        "MATH 140"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "business_strategy",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "consultant",
+        "business_analyst"
+      ],
+      "description": "Linear programming, simulation, and decision analysis."
+    },
+    {
+      "code": "BUAN 490",
+      "dept": "BUAN",
+      "number": 490,
+      "title": "Business Analytics Capstone",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "BUAN 310",
+        "BUAN 320"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "data_statistics",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "business_analyst",
+        "data_analyst"
+      ],
+      "description": "Consulting-style analytics project for a partner organization."
+    },
+    {
+      "code": "FIN 210",
+      "dept": "FIN",
+      "number": 210,
+      "title": "Financial Markets & Institutions",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "ECON 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "finance_investing",
+        "economics_policy"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "investment_banking_analyst"
+      ],
+      "description": "Structure of money, bond, and equity markets and the firms in them."
+    },
+    {
+      "code": "FIN 301",
+      "dept": "FIN",
+      "number": 301,
+      "title": "Corporate Finance",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ACCT 201",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "finance_investing"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "investment_banking_analyst",
+        "consultant"
+      ],
+      "description": "Time value of money, capital budgeting, and cost of capital."
+    },
+    {
+      "code": "FIN 310",
+      "dept": "FIN",
+      "number": 310,
+      "title": "Investments",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "FIN 301"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "finance_investing"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "investment_banking_analyst"
+      ],
+      "description": "Portfolio theory, asset pricing, and fixed income."
+    },
+    {
+      "code": "FIN 320",
+      "dept": "FIN",
+      "number": 320,
+      "title": "Financial Modeling",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "FIN 301"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "finance_investing",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "investment_banking_analyst",
+        "financial_analyst"
+      ],
+      "description": "Building three-statement, DCF, and LBO models in spreadsheets."
+    },
+    {
+      "code": "FIN 410",
+      "dept": "FIN",
+      "number": 410,
+      "title": "Valuation & Investment Banking",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "FIN 320"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "finance_investing",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "investment_banking_analyst"
+      ],
+      "description": "Comparable companies, precedent transactions, and M&A process."
+    },
+    {
+      "code": "FIN 490",
+      "dept": "FIN",
+      "number": 490,
+      "title": "Student-Managed Investment Fund",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "FIN 310"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "finance_investing"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "investment_banking_analyst"
+      ],
+      "description": "Students research and manage a real endowment-funded portfolio."
+    },
+    {
+      "code": "ECON 201",
+      "dept": "ECON",
+      "number": 201,
+      "title": "Intermediate Microeconomics",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "ECON 101",
+        "MATH 151"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "economics_policy",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "consultant"
+      ],
+      "description": "Calculus-based consumer and producer theory and welfare."
+    },
+    {
+      "code": "ECON 202",
+      "dept": "ECON",
+      "number": 202,
+      "title": "Intermediate Macroeconomics",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "ECON 102"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "economics_policy"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "financial_analyst"
+      ],
+      "description": "Growth, business cycles, and stabilization policy models."
+    },
+    {
+      "code": "ECON 310",
+      "dept": "ECON",
+      "number": 310,
+      "title": "Econometrics",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ECON 101",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "economics_policy",
+        "data_statistics"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "data_analyst",
+        "data_scientist"
+      ],
+      "description": "Regression for causal inference with economic data."
+    },
+    {
+      "code": "ECON 320",
+      "dept": "ECON",
+      "number": 320,
+      "title": "Public Economics & Policy Analysis",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ECON 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "economics_policy",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "public_health_analyst"
+      ],
+      "description": "Taxation, public goods, and cost-benefit analysis of policy."
+    },
+    {
+      "code": "ECON 330",
+      "dept": "ECON",
+      "number": 330,
+      "title": "Money & Banking",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ECON 102"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "economics_policy",
+        "finance_investing"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "investment_banking_analyst",
+        "economist_policy_analyst"
+      ],
+      "description": "Central banking, interest rates, and the banking system."
+    },
+    {
+      "code": "ECON 350",
+      "dept": "ECON",
+      "number": 350,
+      "title": "Behavioral Economics",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ECON 101",
+        "PSYC 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "economics_policy",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "consultant",
+        "market_research_analyst",
+        "ux_researcher"
+      ],
+      "description": "How cognitive biases shape economic decisions."
+    },
+    {
+      "code": "ECON 490",
+      "dept": "ECON",
+      "number": 490,
+      "title": "Senior Research Seminar in Economics",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "ECON 201",
+        "ECON 310"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "economics_policy",
+        "research"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "research_scientist"
+      ],
+      "description": "Independent empirical research paper with faculty mentoring."
+    },
+    {
+      "code": "PSYC 201",
+      "dept": "PSYC",
+      "number": 201,
+      "title": "Research Methods in Psychology",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "PSYC 101",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "psychology_behavior",
+        "research"
+      ],
+      "relevantGoals": [
+        "ux_researcher",
+        "research_scientist"
+      ],
+      "description": "Experimental and survey design, ethics, and APA-style reporting."
+    },
+    {
+      "code": "PSYC 210",
+      "dept": "PSYC",
+      "number": 210,
+      "title": "Developmental Psychology",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "PSYC 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "mental_health_counselor",
+        "registered_nurse"
+      ],
+      "description": "Human development from infancy through late adulthood."
+    },
+    {
+      "code": "PSYC 220",
+      "dept": "PSYC",
+      "number": 220,
+      "title": "Social Psychology",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "PSYC 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "psychology_behavior",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "hr_specialist",
+        "marketing_specialist",
+        "market_research_analyst"
+      ],
+      "description": "Attitudes, persuasion, group dynamics, and social influence."
+    },
+    {
+      "code": "PSYC 230",
+      "dept": "PSYC",
+      "number": 230,
+      "title": "Cognitive Psychology",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "PSYC 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "psychology_behavior",
+        "research"
+      ],
+      "relevantGoals": [
+        "ux_researcher",
+        "ux_designer",
+        "research_scientist"
+      ],
+      "description": "Attention, memory, language, and decision making."
+    },
+    {
+      "code": "PSYC 310",
+      "dept": "PSYC",
+      "number": 310,
+      "title": "Abnormal Psychology",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PSYC 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "psychology_behavior",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "mental_health_counselor",
+        "nurse_practitioner"
+      ],
+      "description": "Classification, causes, and treatment of psychological disorders."
+    },
+    {
+      "code": "PSYC 330",
+      "dept": "PSYC",
+      "number": 330,
+      "title": "Industrial-Organizational Psychology",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PSYC 220"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "psychology_behavior",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "hr_specialist",
+        "consultant"
+      ],
+      "description": "Selection, training, motivation, and well-being at work."
+    },
+    {
+      "code": "PSYC 340",
+      "dept": "PSYC",
+      "number": 340,
+      "title": "Human Factors & UX Research",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PSYC 230",
+        "PSYC 201"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "psychology_behavior",
+        "research",
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "ux_researcher",
+        "ux_designer"
+      ],
+      "description": "Usability testing, interviews, and cognitive principles of interface design."
+    },
+    {
+      "code": "PSYC 350",
+      "dept": "PSYC",
+      "number": 350,
+      "title": "Counseling Theories & Techniques",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PSYC 310"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "psychology_behavior",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "mental_health_counselor"
+      ],
+      "description": "Major counseling approaches with practice in helping skills."
+    },
+    {
+      "code": "PSYC 410",
+      "dept": "PSYC",
+      "number": 410,
+      "title": "Advanced Research Lab in Psychology",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "PSYC 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "research",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "ux_researcher"
+      ],
+      "description": "Students run an original study in a faculty lab."
+    },
+    {
+      "code": "PSYC 490",
+      "dept": "PSYC",
+      "number": 490,
+      "title": "Psychology Senior Seminar",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "PSYC 201"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "psychology_behavior",
+        "research"
+      ],
+      "relevantGoals": [
+        "mental_health_counselor",
+        "research_scientist"
+      ],
+      "description": "Capstone synthesis of the field with a literature review project."
+    },
+    {
+      "code": "BIOL 221",
+      "dept": "BIOL",
+      "number": 221,
+      "title": "Human Anatomy & Physiology I",
+      "credits": 4,
+      "level": 200,
+      "prereqs": [
+        "BIOL 111"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "life_sciences",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "physician",
+        "nurse_practitioner"
+      ],
+      "description": "Structure and function of skeletal, muscular, and nervous systems."
+    },
+    {
+      "code": "BIOL 222",
+      "dept": "BIOL",
+      "number": 222,
+      "title": "Human Anatomy & Physiology II",
+      "credits": 4,
+      "level": 200,
+      "prereqs": [
+        "BIOL 221"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "life_sciences",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "physician",
+        "nurse_practitioner"
+      ],
+      "description": "Cardiovascular, respiratory, renal, and endocrine systems."
+    },
+    {
+      "code": "BIOL 230",
+      "dept": "BIOL",
+      "number": 230,
+      "title": "Microbiology",
+      "credits": 4,
+      "level": 200,
+      "prereqs": [
+        "BIOL 111"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "life_sciences",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "clinical_research_coordinator",
+        "public_health_analyst"
+      ],
+      "description": "Microbial structure, infection, immunity, and lab techniques."
+    },
+    {
+      "code": "BIOL 301",
+      "dept": "BIOL",
+      "number": 301,
+      "title": "Cell & Molecular Biology",
+      "credits": 4,
+      "level": 300,
+      "prereqs": [
+        "BIOL 112",
+        "CHEM 112"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "life_sciences",
+        "research"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "physician"
+      ],
+      "description": "Gene expression, signaling, and cell cycle regulation."
+    },
+    {
+      "code": "BIOL 310",
+      "dept": "BIOL",
+      "number": 310,
+      "title": "Genetics",
+      "credits": 4,
+      "level": 300,
+      "prereqs": [
+        "BIOL 112"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "life_sciences",
+        "research"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "physician",
+        "clinical_research_coordinator"
+      ],
+      "description": "Mendelian, molecular, and population genetics."
+    },
+    {
+      "code": "BIOL 420",
+      "dept": "BIOL",
+      "number": 420,
+      "title": "Undergraduate Research in Biology",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "BIOL 301"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "research",
+        "life_sciences"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "clinical_research_coordinator"
+      ],
+      "description": "Independent research in a faculty laboratory."
+    },
+    {
+      "code": "BIOL 490",
+      "dept": "BIOL",
+      "number": 490,
+      "title": "Biology Capstone Seminar",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "BIOL 301"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "life_sciences",
+        "research"
+      ],
+      "relevantGoals": [
+        "physician",
+        "research_scientist"
+      ],
+      "description": "Reading primary literature and presenting a research synthesis."
+    },
+    {
+      "code": "CHEM 311",
+      "dept": "CHEM",
+      "number": 311,
+      "title": "Organic Chemistry I",
+      "credits": 4,
+      "level": 300,
+      "prereqs": [
+        "CHEM 112"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "chemistry"
+      ],
+      "relevantGoals": [
+        "physician",
+        "research_scientist"
+      ],
+      "description": "Structure, reactivity, and mechanisms of organic molecules."
+    },
+    {
+      "code": "CHEM 312",
+      "dept": "CHEM",
+      "number": 312,
+      "title": "Organic Chemistry II",
+      "credits": 4,
+      "level": 300,
+      "prereqs": [
+        "CHEM 311"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "chemistry"
+      ],
+      "relevantGoals": [
+        "physician",
+        "research_scientist"
+      ],
+      "description": "Synthesis, spectroscopy, and biologically relevant reactions."
+    },
+    {
+      "code": "CHEM 410",
+      "dept": "CHEM",
+      "number": 410,
+      "title": "Biochemistry",
+      "credits": 4,
+      "level": 400,
+      "prereqs": [
+        "CHEM 312",
+        "BIOL 112"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "chemistry",
+        "life_sciences"
+      ],
+      "relevantGoals": [
+        "physician",
+        "research_scientist"
+      ],
+      "description": "Proteins, enzymes, metabolism, and molecular basis of disease."
+    },
+    {
+      "code": "NURS 201",
+      "dept": "NURS",
+      "number": 201,
+      "title": "Foundations of Nursing Practice",
+      "credits": 4,
+      "level": 200,
+      "prereqs": [
+        "BIOL 111",
+        "PSYC 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Core nursing skills, patient safety, and the nursing process."
+    },
+    {
+      "code": "NURS 210",
+      "dept": "NURS",
+      "number": 210,
+      "title": "Health Assessment",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "NURS 201",
+        "BIOL 221"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare",
+        "life_sciences"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Physical examination and health history across the lifespan."
+    },
+    {
+      "code": "NURS 220",
+      "dept": "NURS",
+      "number": 220,
+      "title": "Pharmacology for Nursing",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "NURS 201",
+        "CHEM 111"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare",
+        "chemistry"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Drug classes, dosage calculation, and safe medication administration."
+    },
+    {
+      "code": "NURS 301",
+      "dept": "NURS",
+      "number": 301,
+      "title": "Medical-Surgical Nursing I",
+      "credits": 5,
+      "level": 300,
+      "prereqs": [
+        "NURS 201",
+        "BIOL 222"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Care of adults with common acute and chronic conditions, with clinical rotation."
+    },
+    {
+      "code": "NURS 302",
+      "dept": "NURS",
+      "number": 302,
+      "title": "Medical-Surgical Nursing II",
+      "credits": 5,
+      "level": 300,
+      "prereqs": [
+        "NURS 301"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Care of adults with complex conditions, with clinical rotation."
+    },
+    {
+      "code": "NURS 310",
+      "dept": "NURS",
+      "number": 310,
+      "title": "Maternal & Child Health Nursing",
+      "credits": 4,
+      "level": 300,
+      "prereqs": [
+        "NURS 301"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Care of childbearing families and children, with clinical rotation."
+    },
+    {
+      "code": "NURS 320",
+      "dept": "NURS",
+      "number": 320,
+      "title": "Psychiatric & Mental Health Nursing",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "NURS 201",
+        "PSYC 101"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner",
+        "mental_health_counselor"
+      ],
+      "description": "Therapeutic communication and care of patients with mental illness."
+    },
+    {
+      "code": "NURS 330",
+      "dept": "NURS",
+      "number": 330,
+      "title": "Nursing Research & Evidence-Based Practice",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "NURS 201",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare",
+        "research"
+      ],
+      "relevantGoals": [
+        "nurse_practitioner",
+        "clinical_research_coordinator"
+      ],
+      "description": "Appraising research and translating evidence into practice."
+    },
+    {
+      "code": "NURS 401",
+      "dept": "NURS",
+      "number": 401,
+      "title": "Complex & Critical Care Nursing",
+      "credits": 4,
+      "level": 400,
+      "prereqs": [
+        "NURS 302"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Critical care, emergency, and multi-system patient management."
+    },
+    {
+      "code": "NURS 490",
+      "dept": "NURS",
+      "number": 490,
+      "title": "Clinical Practicum Capstone",
+      "credits": 5,
+      "level": 400,
+      "prereqs": [
+        "NURS 401"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ],
+      "description": "Precepted clinical immersion and transition to professional practice."
+    },
+    {
+      "code": "PUBH 201",
+      "dept": "PUBH",
+      "number": 201,
+      "title": "Introduction to Public Health",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "healthcare",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "clinical_research_coordinator",
+        "registered_nurse"
+      ],
+      "description": "Determinants of health and the public health system."
+    },
+    {
+      "code": "PUBH 310",
+      "dept": "PUBH",
+      "number": 310,
+      "title": "Epidemiology",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PUBH 201",
+        "STAT 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "healthcare",
+        "data_statistics",
+        "research"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "clinical_research_coordinator",
+        "physician"
+      ],
+      "description": "Measuring disease frequency, study designs, and outbreak investigation."
+    },
+    {
+      "code": "PUBH 320",
+      "dept": "PUBH",
+      "number": 320,
+      "title": "Health Policy & Management",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PUBH 201"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "healthcare",
+        "economics_policy"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "nurse_practitioner",
+        "economist_policy_analyst"
+      ],
+      "description": "US health systems, insurance, and health policy analysis."
+    },
+    {
+      "code": "MECH 101",
+      "dept": "MECH",
+      "number": 101,
+      "title": "Introduction to Engineering Design",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "manufacturing_engineer"
+      ],
+      "description": "Design process, sketching, CAD basics, and team build projects."
+    },
+    {
+      "code": "MECH 210",
+      "dept": "MECH",
+      "number": 210,
+      "title": "Statics",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "PHYS 151",
+        "MATH 152"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "manufacturing_engineer"
+      ],
+      "description": "Force systems, equilibrium, trusses, and friction."
+    },
+    {
+      "code": "MECH 220",
+      "dept": "MECH",
+      "number": 220,
+      "title": "Dynamics",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "MECH 210"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "hardware_engineer"
+      ],
+      "description": "Kinematics and kinetics of particles and rigid bodies."
+    },
+    {
+      "code": "MECH 230",
+      "dept": "MECH",
+      "number": 230,
+      "title": "Materials Science",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "CHEM 111"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design",
+        "chemistry"
+      ],
+      "relevantGoals": [
+        "manufacturing_engineer",
+        "mechanical_engineer"
+      ],
+      "description": "Structure and properties of metals, polymers, and composites."
+    },
+    {
+      "code": "MECH 310",
+      "dept": "MECH",
+      "number": 310,
+      "title": "Thermodynamics",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PHYS 151",
+        "MATH 152"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer"
+      ],
+      "description": "Energy, entropy, and power and refrigeration cycles."
+    },
+    {
+      "code": "MECH 320",
+      "dept": "MECH",
+      "number": 320,
+      "title": "Fluid Mechanics",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MECH 310",
+        "MECH 220"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer"
+      ],
+      "description": "Fluid statics, flow analysis, and pipe and pump systems."
+    },
+    {
+      "code": "MECH 330",
+      "dept": "MECH",
+      "number": 330,
+      "title": "Machine Design",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MECH 220",
+        "MECH 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "manufacturing_engineer"
+      ],
+      "description": "Stress, fatigue, and design of shafts, gears, and bearings."
+    },
+    {
+      "code": "MECH 350",
+      "dept": "MECH",
+      "number": 350,
+      "title": "Manufacturing Processes",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "MECH 230"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "manufacturing_engineer"
+      ],
+      "description": "Machining, casting, additive manufacturing, and process planning."
+    },
+    {
+      "code": "MECH 360",
+      "dept": "MECH",
+      "number": 360,
+      "title": "Mechatronics & Robotics",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "PHYS 152",
+        "CS 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "robotics_hardware",
+        "programming"
+      ],
+      "relevantGoals": [
+        "hardware_engineer"
+      ],
+      "description": "Sensors, actuators, microcontrollers, and robot kinematics."
+    },
+    {
+      "code": "MECH 410",
+      "dept": "MECH",
+      "number": 410,
+      "title": "Control Systems",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "MECH 220",
+        "MATH 310"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "robotics_hardware",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "hardware_engineer",
+        "mechanical_engineer"
+      ],
+      "description": "Feedback control, stability, and PID design."
+    },
+    {
+      "code": "MECH 490",
+      "dept": "MECH",
+      "number": 490,
+      "title": "Senior Design Capstone",
+      "credits": 4,
+      "level": 400,
+      "prereqs": [
+        "MECH 330",
+        "MECH 310"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "engineering_design",
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "manufacturing_engineer",
+        "hardware_engineer"
+      ],
+      "description": "Industry-sponsored team design and build project."
+    },
+    {
+      "code": "ART 111",
+      "dept": "ART",
+      "number": 111,
+      "title": "Design Foundations",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "ux_designer"
+      ],
+      "description": "Composition, color, form, and visual hierarchy in studio practice."
+    },
+    {
+      "code": "ART 120",
+      "dept": "ART",
+      "number": 120,
+      "title": "Digital Imaging & Design Tools",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "ux_designer",
+        "marketing_specialist"
+      ],
+      "description": "Industry-standard raster, vector, and layout software."
+    },
+    {
+      "code": "ART 211",
+      "dept": "ART",
+      "number": 211,
+      "title": "Typography I",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "ART 111"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "graphic_designer"
+      ],
+      "description": "Letterforms, type systems, and grid-based layout."
+    },
+    {
+      "code": "ART 311",
+      "dept": "ART",
+      "number": 311,
+      "title": "Typography II: Editorial Design",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ART 211"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design",
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "graphic_designer"
+      ],
+      "description": "Multi-page publication and editorial systems."
+    },
+    {
+      "code": "ART 320",
+      "dept": "ART",
+      "number": 320,
+      "title": "Visual Identity & Branding",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ART 211"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design",
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "marketing_specialist"
+      ],
+      "description": "Logos, identity systems, and brand guidelines."
+    },
+    {
+      "code": "ART 330",
+      "dept": "ART",
+      "number": 330,
+      "title": "Interaction Design",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ART 211",
+        "ART 120"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design",
+        "programming"
+      ],
+      "relevantGoals": [
+        "ux_designer",
+        "product_manager"
+      ],
+      "description": "Designing screens, flows, and responsive interfaces."
+    },
+    {
+      "code": "ART 360",
+      "dept": "ART",
+      "number": 360,
+      "title": "UX Prototyping Studio",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "ART 330"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_elective",
+      "tags": [
+        "visual_design",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "ux_designer",
+        "ux_researcher"
+      ],
+      "description": "High-fidelity prototyping and usability testing of digital products."
+    },
+    {
+      "code": "ART 410",
+      "dept": "ART",
+      "number": 410,
+      "title": "Advanced Design Studio",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "ART 320"
+      ],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "ux_designer"
+      ],
+      "description": "Self-directed studio projects with professional critique."
+    },
+    {
+      "code": "ART 490",
+      "dept": "ART",
+      "number": 490,
+      "title": "Portfolio Capstone",
+      "credits": 3,
+      "level": 400,
+      "prereqs": [
+        "ART 410"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "major_core",
+      "tags": [
+        "visual_design",
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "ux_designer"
+      ],
+      "description": "Professional portfolio, personal brand, and juried exhibition."
+    },
+    {
+      "code": "COMM 210",
+      "dept": "COMM",
+      "number": 210,
+      "title": "Media Writing",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "ENGL 101"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "marketing_specialist",
+        "graphic_designer"
+      ],
+      "description": "Writing for news, web, and social media audiences."
+    },
+    {
+      "code": "COMM 220",
+      "dept": "COMM",
+      "number": 220,
+      "title": "Interpersonal & Team Communication",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "psychology_behavior",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "hr_specialist",
+        "consultant",
+        "product_manager"
+      ],
+      "description": "Listening, conflict, and collaboration in teams."
+    },
+    {
+      "code": "COMM 310",
+      "dept": "COMM",
+      "number": 310,
+      "title": "Strategic Communication & PR",
+      "credits": 3,
+      "level": 300,
+      "prereqs": [
+        "COMM 210"
+      ],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "minor",
+      "tags": [
+        "marketing_media",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "marketing_specialist"
+      ],
+      "description": "Campaign planning, media relations, and crisis communication."
+    },
+    {
+      "code": "SPAN 101",
+      "dept": "SPAN",
+      "number": 101,
+      "title": "Elementary Spanish I",
+      "credits": 4,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "social_impact",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "public_health_analyst",
+        "physician"
+      ],
+      "description": "Introductory conversation, grammar, and culture of the Spanish-speaking world."
+    },
+    {
+      "code": "ENVS 101",
+      "dept": "ENVS",
+      "number": 101,
+      "title": "Environmental Science",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "life_sciences",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "research_scientist"
+      ],
+      "description": "Ecosystems, climate, and human impacts on the environment."
+    },
+    {
+      "code": "KIN 101",
+      "dept": "KIN",
+      "number": 101,
+      "title": "Lifetime Fitness & Wellness",
+      "credits": 2,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "physician"
+      ],
+      "description": "Fitness, nutrition, and stress management for lifelong health."
+    },
+    {
+      "code": "CAR 201",
+      "dept": "CAR",
+      "number": 201,
+      "title": "Career Readiness Seminar",
+      "credits": 1,
+      "level": 200,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "business_analyst",
+        "consultant",
+        "software_engineer",
+        "marketing_specialist"
+      ],
+      "description": "Resumes, networking, and interviewing for internships and jobs."
+    },
+    {
+      "code": "MUS 101",
+      "dept": "MUS",
+      "number": 101,
+      "title": "Music in World Cultures",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "visual_design",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "marketing_specialist"
+      ],
+      "description": "Listening survey of musical traditions from around the world."
+    },
+    {
+      "code": "ASTR 101",
+      "dept": "ASTR",
+      "number": 101,
+      "title": "Introduction to Astronomy",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "research",
+        "mathematics"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "mechanical_engineer"
+      ],
+      "description": "Planets, stars, galaxies, and how astronomers know what they know."
+    },
+    {
+      "code": "ANTH 101",
+      "dept": "ANTH",
+      "number": 101,
+      "title": "Cultural Anthropology",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "social_impact",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "ux_researcher",
+        "public_health_analyst",
+        "market_research_analyst"
+      ],
+      "description": "Ethnographic methods and the comparative study of human cultures."
+    },
+    {
+      "code": "GEOG 101",
+      "dept": "GEOG",
+      "number": 101,
+      "title": "Human Geography & GIS Basics",
+      "credits": 3,
+      "level": 100,
+      "prereqs": [],
+      "termsOffered": [
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "data_statistics",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "economist_policy_analyst",
+        "data_analyst"
+      ],
+      "description": "Population, cities, and an introduction to mapping spatial data."
+    },
+    {
+      "code": "WRIT 220",
+      "dept": "WRIT",
+      "number": 220,
+      "title": "Technical & Professional Writing",
+      "credits": 3,
+      "level": 200,
+      "prereqs": [
+        "ENGL 102"
+      ],
+      "termsOffered": [
+        "Fall",
+        "Spring"
+      ],
+      "category": "free_elective",
+      "tags": [
+        "engineering_design",
+        "programming",
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "mechanical_engineer",
+        "product_manager"
+      ],
+      "description": "Writing reports, documentation, and proposals for professional audiences."
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "_note": "SYNTHETIC DATA for the Degree Pathway Suggester POC (fictional Ridgeview State University). Gen-ed, major, and minor requirements.",
+  "genEd": {
+    "required": [
+      "UNIV 101",
+      "ENGL 101",
+      "ENGL 102",
+      "COMM 101"
+    ],
+    "electivePool": [
+      "HIST 101",
+      "PHIL 101",
+      "SOC 101",
+      "POLS 101",
+      "ART 100",
+      "PSYC 101",
+      "ECON 101"
+    ],
+    "electivesRequired": 3
+  },
+  "majors": [
+    {
+      "pathwayId": "computer_science",
+      "core": [
+        "CS 101",
+        "CS 120",
+        "CS 201",
+        "CS 210",
+        "CS 301",
+        "CS 320",
+        "CS 490",
+        "MATH 151",
+        "MATH 152",
+        "MATH 221",
+        "MATH 230",
+        "STAT 210"
+      ],
+      "electivePool": [
+        "CS 330",
+        "CS 350",
+        "CS 370",
+        "CS 450",
+        "CS 460",
+        "DS 320",
+        "STAT 310",
+        "MATH 340",
+        "BUS 330",
+        "ENTR 201"
+      ],
+      "electivesRequired": 4
+    },
+    {
+      "pathwayId": "data_science",
+      "core": [
+        "CS 101",
+        "CS 120",
+        "MATH 151",
+        "MATH 152",
+        "MATH 221",
+        "STAT 210",
+        "STAT 310",
+        "DS 101",
+        "DS 201",
+        "DS 301",
+        "DS 490"
+      ],
+      "electivePool": [
+        "CS 201",
+        "CS 330",
+        "CS 450",
+        "CS 460",
+        "DS 320",
+        "STAT 320",
+        "STAT 360",
+        "MATH 340",
+        "ECON 310",
+        "BUAN 310",
+        "BUS 330"
+      ],
+      "electivesRequired": 4
+    },
+    {
+      "pathwayId": "business_analytics",
+      "core": [
+        "BUS 101",
+        "ACCT 201",
+        "ECON 101",
+        "MATH 140",
+        "STAT 210",
+        "STAT 310",
+        "BUAN 210",
+        "BUAN 220",
+        "BUAN 310",
+        "BUAN 320",
+        "BUAN 330",
+        "BUAN 490",
+        "MKTG 201"
+      ],
+      "electivePool": [
+        "BUS 301",
+        "BUS 330",
+        "BUS 401",
+        "MKTG 310",
+        "MKTG 330",
+        "FIN 301",
+        "ECON 310",
+        "DS 320",
+        "ENTR 201",
+        "CS 101"
+      ],
+      "electivesRequired": 3
+    },
+    {
+      "pathwayId": "finance",
+      "core": [
+        "BUS 101",
+        "ACCT 201",
+        "ACCT 202",
+        "ECON 101",
+        "ECON 102",
+        "MATH 140",
+        "STAT 210",
+        "FIN 210",
+        "FIN 301",
+        "FIN 310",
+        "FIN 320",
+        "FIN 490"
+      ],
+      "electivePool": [
+        "FIN 410",
+        "ECON 310",
+        "ECON 330",
+        "BUAN 220",
+        "BUAN 310",
+        "STAT 310",
+        "BUS 330",
+        "BUS 401",
+        "ENTR 201"
+      ],
+      "electivesRequired": 3
+    },
+    {
+      "pathwayId": "economics",
+      "core": [
+        "ECON 101",
+        "ECON 102",
+        "ECON 201",
+        "ECON 202",
+        "ECON 310",
+        "ECON 490",
+        "MATH 151",
+        "STAT 210"
+      ],
+      "electivePool": [
+        "ECON 320",
+        "ECON 330",
+        "ECON 350",
+        "FIN 210",
+        "FIN 301",
+        "STAT 310",
+        "MATH 221",
+        "PUBH 320",
+        "BUAN 210",
+        "MKTG 330"
+      ],
+      "electivesRequired": 4
+    },
+    {
+      "pathwayId": "psychology",
+      "core": [
+        "PSYC 101",
+        "PSYC 201",
+        "PSYC 210",
+        "PSYC 220",
+        "PSYC 230",
+        "PSYC 490",
+        "STAT 210"
+      ],
+      "electivePool": [
+        "PSYC 310",
+        "PSYC 330",
+        "PSYC 340",
+        "PSYC 350",
+        "PSYC 410",
+        "STAT 310",
+        "STAT 320",
+        "CS 350",
+        "MKTG 310",
+        "BUS 320",
+        "PUBH 201",
+        "BUAN 210"
+      ],
+      "electivesRequired": 4
+    },
+    {
+      "pathwayId": "biology_premed",
+      "core": [
+        "BIOL 111",
+        "BIOL 112",
+        "CHEM 111",
+        "CHEM 112",
+        "CHEM 311",
+        "CHEM 312",
+        "CHEM 410",
+        "PHYS 151",
+        "PHYS 152",
+        "MATH 151",
+        "STAT 210",
+        "BIOL 301",
+        "BIOL 310",
+        "BIOL 490"
+      ],
+      "electivePool": [
+        "BIOL 221",
+        "BIOL 222",
+        "BIOL 230",
+        "BIOL 420",
+        "STAT 360",
+        "STAT 310",
+        "PUBH 201",
+        "PUBH 310",
+        "PSYC 101"
+      ],
+      "electivesRequired": 3
+    },
+    {
+      "pathwayId": "nursing",
+      "core": [
+        "BIOL 111",
+        "BIOL 221",
+        "BIOL 222",
+        "BIOL 230",
+        "CHEM 111",
+        "PSYC 101",
+        "STAT 210",
+        "NURS 201",
+        "NURS 210",
+        "NURS 220",
+        "NURS 301",
+        "NURS 302",
+        "NURS 310",
+        "NURS 320",
+        "NURS 330",
+        "NURS 401",
+        "NURS 490"
+      ],
+      "electivePool": [
+        "PUBH 201",
+        "PUBH 310",
+        "PUBH 320",
+        "PSYC 210",
+        "PSYC 310",
+        "STAT 360",
+        "BUS 220"
+      ],
+      "electivesRequired": 2
+    },
+    {
+      "pathwayId": "mechanical_engineering",
+      "core": [
+        "MATH 151",
+        "MATH 152",
+        "MATH 221",
+        "MATH 251",
+        "MATH 310",
+        "PHYS 151",
+        "PHYS 152",
+        "CHEM 111",
+        "CS 101",
+        "MECH 101",
+        "MECH 210",
+        "MECH 220",
+        "MECH 230",
+        "MECH 310",
+        "MECH 320",
+        "MECH 330",
+        "MECH 490"
+      ],
+      "electivePool": [
+        "MECH 350",
+        "MECH 360",
+        "MECH 410",
+        "CS 120",
+        "BUS 330",
+        "BUS 301",
+        "STAT 310",
+        "ENTR 201"
+      ],
+      "electivesRequired": 3
+    },
+    {
+      "pathwayId": "graphic_design",
+      "core": [
+        "ART 100",
+        "ART 111",
+        "ART 120",
+        "ART 211",
+        "ART 311",
+        "ART 320",
+        "ART 330",
+        "ART 410",
+        "ART 490"
+      ],
+      "electivePool": [
+        "ART 360",
+        "MKTG 201",
+        "MKTG 310",
+        "MKTG 320",
+        "CS 350",
+        "PSYC 230",
+        "ENTR 201",
+        "COMM 210"
+      ],
+      "electivesRequired": 3
+    }
+  ],
+  "minors": [
+    {
+      "minorId": "mathematics",
+      "courses": [
+        "MATH 221",
+        "MATH 230",
+        "MATH 251",
+        "MATH 310",
+        "MATH 340"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "statistics",
+      "courses": [
+        "STAT 210",
+        "STAT 310",
+        "STAT 320",
+        "STAT 360",
+        "MATH 340"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "computer_science",
+      "courses": [
+        "CS 101",
+        "CS 120",
+        "CS 201",
+        "CS 330",
+        "CS 350"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "business",
+      "courses": [
+        "BUS 101",
+        "ACCT 201",
+        "MKTG 201",
+        "BUS 220",
+        "BUS 301",
+        "BUS 330"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "economics",
+      "courses": [
+        "ECON 101",
+        "ECON 102",
+        "ECON 201",
+        "ECON 310",
+        "ECON 330"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "psychology",
+      "courses": [
+        "PSYC 101",
+        "PSYC 210",
+        "PSYC 220",
+        "PSYC 230",
+        "PSYC 310"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "biology",
+      "courses": [
+        "BIOL 111",
+        "BIOL 112",
+        "BIOL 221",
+        "BIOL 230",
+        "BIOL 310"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "chemistry",
+      "courses": [
+        "CHEM 111",
+        "CHEM 112",
+        "CHEM 311",
+        "CHEM 312",
+        "CHEM 410"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "public_health",
+      "courses": [
+        "PUBH 201",
+        "PUBH 310",
+        "PUBH 320",
+        "STAT 360"
+      ],
+      "coursesRequired": 3
+    },
+    {
+      "minorId": "marketing",
+      "courses": [
+        "MKTG 201",
+        "MKTG 310",
+        "MKTG 320",
+        "MKTG 330"
+      ],
+      "coursesRequired": 3
+    },
+    {
+      "minorId": "communications",
+      "courses": [
+        "COMM 210",
+        "COMM 220",
+        "COMM 310",
+        "MKTG 320"
+      ],
+      "coursesRequired": 3
+    },
+    {
+      "minorId": "design",
+      "courses": [
+        "ART 111",
+        "ART 120",
+        "ART 211",
+        "ART 330",
+        "ART 360"
+      ],
+      "coursesRequired": 4
+    },
+    {
+      "minorId": "entrepreneurship",
+      "courses": [
+        "ENTR 201",
+        "ENTR 310",
+        "ENTR 410",
+        "BUS 101"
+      ],
+      "coursesRequired": 3
+    }
+  ]
+}

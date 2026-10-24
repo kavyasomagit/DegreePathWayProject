@@ -1,0 +1,372 @@
+{
+  "_note": "SYNTHETIC DATA for the Degree Pathway Suggester POC (fictional Ridgeview State University). Student organizations.",
+  "clubs": [
+    {
+      "id": "acm_chapter",
+      "name": "ACM Student Chapter",
+      "description": "Tech talks, coding nights, and interview prep for computing students.",
+      "tags": [
+        "programming",
+        "ai_ml"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "ml_engineer"
+      ]
+    },
+    {
+      "id": "women_in_computing",
+      "name": "Women in Computing",
+      "description": "Community, mentoring, and conference travel for women and nonbinary students in tech.",
+      "tags": [
+        "programming",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "ml_engineer",
+        "data_scientist",
+        "product_manager"
+      ]
+    },
+    {
+      "id": "hackridge",
+      "name": "HackRidge Hackathon Society",
+      "description": "Organizes Ridgeview's annual 36-hour hackathon and weekly build sessions.",
+      "tags": [
+        "programming",
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "software_engineer",
+        "product_manager"
+      ]
+    },
+    {
+      "id": "data_science_club",
+      "name": "Data Science Club",
+      "description": "Kaggle-style competitions, workshops, and data-for-good projects.",
+      "tags": [
+        "data_statistics",
+        "ai_ml"
+      ],
+      "relevantGoals": [
+        "data_scientist",
+        "data_analyst",
+        "ml_engineer"
+      ]
+    },
+    {
+      "id": "ai_research_group",
+      "name": "AI Research Reading Group",
+      "description": "Weekly paper discussions and undergraduate ML research projects.",
+      "tags": [
+        "ai_ml",
+        "research"
+      ],
+      "relevantGoals": [
+        "ml_engineer",
+        "research_scientist"
+      ]
+    },
+    {
+      "id": "business_analytics_society",
+      "name": "Business Analytics Society",
+      "description": "Case competitions and SQL/BI workshops with employer partners.",
+      "tags": [
+        "data_statistics",
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "business_analyst",
+        "data_analyst",
+        "market_research_analyst"
+      ]
+    },
+    {
+      "id": "investment_club",
+      "name": "Ridgeview Investment Club",
+      "description": "Stock pitches, market updates, and a mock portfolio competition.",
+      "tags": [
+        "finance_investing"
+      ],
+      "relevantGoals": [
+        "financial_analyst",
+        "investment_banking_analyst"
+      ]
+    },
+    {
+      "id": "consulting_club",
+      "name": "Consulting Club",
+      "description": "Case interview practice and pro bono projects for local nonprofits.",
+      "tags": [
+        "business_strategy"
+      ],
+      "relevantGoals": [
+        "consultant",
+        "business_analyst"
+      ]
+    },
+    {
+      "id": "product_management_club",
+      "name": "Product Management Club",
+      "description": "Product teardowns, roadmapping workshops, and PM speaker series.",
+      "tags": [
+        "business_strategy",
+        "programming",
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "product_manager",
+        "ux_designer"
+      ]
+    },
+    {
+      "id": "economics_society",
+      "name": "Economics Society",
+      "description": "Faculty talks, research showcases, and the Fed Challenge team.",
+      "tags": [
+        "economics_policy",
+        "research"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "financial_analyst"
+      ]
+    },
+    {
+      "id": "public_policy_forum",
+      "name": "Public Policy Forum",
+      "description": "Debates and policy memo competitions on local and national issues.",
+      "tags": [
+        "economics_policy",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "economist_policy_analyst",
+        "public_health_analyst"
+      ]
+    },
+    {
+      "id": "entrepreneurship_club",
+      "name": "Entrepreneurship Club",
+      "description": "Startup pitch nights, founder talks, and the Ridgeview Launch prize.",
+      "tags": [
+        "entrepreneurship"
+      ],
+      "relevantGoals": [
+        "product_manager",
+        "consultant"
+      ]
+    },
+    {
+      "id": "marketing_association",
+      "name": "Marketing Association",
+      "description": "Brand challenges, agency visits, and social media campaigns for campus groups.",
+      "tags": [
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "marketing_specialist",
+        "market_research_analyst"
+      ]
+    },
+    {
+      "id": "premed_society",
+      "name": "Pre-Med Society",
+      "description": "MCAT prep, shadowing connections, and medical school admissions panels.",
+      "tags": [
+        "healthcare",
+        "life_sciences"
+      ],
+      "relevantGoals": [
+        "physician",
+        "clinical_research_coordinator"
+      ]
+    },
+    {
+      "id": "student_nurses_association",
+      "name": "Student Nurses Association",
+      "description": "NCLEX study groups, health fairs, and clinical skills practice.",
+      "tags": [
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "registered_nurse",
+        "nurse_practitioner"
+      ]
+    },
+    {
+      "id": "public_health_alliance",
+      "name": "Public Health Alliance",
+      "description": "Community health campaigns and public health career panels.",
+      "tags": [
+        "healthcare",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "clinical_research_coordinator"
+      ]
+    },
+    {
+      "id": "undergrad_research_society",
+      "name": "Undergraduate Research Society",
+      "description": "Helps students find labs, write posters, and present at symposia.",
+      "tags": [
+        "research",
+        "life_sciences",
+        "chemistry"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "clinical_research_coordinator"
+      ]
+    },
+    {
+      "id": "psychology_club",
+      "name": "Psychology Club",
+      "description": "Speaker events on careers in counseling, research, and organizational psychology.",
+      "tags": [
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "mental_health_counselor",
+        "hr_specialist",
+        "ux_researcher"
+      ]
+    },
+    {
+      "id": "psych_research_circle",
+      "name": "Psychology Research Circle",
+      "description": "Lab matching and journal club for students interested in psychological science.",
+      "tags": [
+        "psychology_behavior",
+        "research"
+      ],
+      "relevantGoals": [
+        "research_scientist",
+        "ux_researcher"
+      ]
+    },
+    {
+      "id": "ux_design_society",
+      "name": "UX Design Society",
+      "description": "Design sprints, portfolio reviews, and usability testing workshops.",
+      "tags": [
+        "visual_design",
+        "psychology_behavior"
+      ],
+      "relevantGoals": [
+        "ux_designer",
+        "ux_researcher"
+      ]
+    },
+    {
+      "id": "aiga_student_group",
+      "name": "AIGA Student Group",
+      "description": "Design critiques, studio tours, and an annual student design show.",
+      "tags": [
+        "visual_design",
+        "marketing_media"
+      ],
+      "relevantGoals": [
+        "graphic_designer",
+        "ux_designer"
+      ]
+    },
+    {
+      "id": "robotics_team",
+      "name": "Ridgeview Robotics Team",
+      "description": "Designs and builds autonomous robots for intercollegiate competitions.",
+      "tags": [
+        "robotics_hardware",
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "hardware_engineer",
+        "mechanical_engineer"
+      ]
+    },
+    {
+      "id": "formula_racing",
+      "name": "Formula SAE Racing Team",
+      "description": "Students design, build, and race a formula-style car each year.",
+      "tags": [
+        "engineering_design"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "manufacturing_engineer"
+      ]
+    },
+    {
+      "id": "engineers_for_community",
+      "name": "Engineers for Community",
+      "description": "Engineering projects that serve local schools and nonprofits.",
+      "tags": [
+        "engineering_design",
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "mechanical_engineer",
+        "manufacturing_engineer"
+      ]
+    },
+    {
+      "id": "student_media",
+      "name": "Ridgeview Review Student Media",
+      "description": "Campus newspaper, podcast, and video channel run by students.",
+      "tags": [
+        "marketing_media",
+        "visual_design"
+      ],
+      "relevantGoals": [
+        "marketing_specialist",
+        "graphic_designer"
+      ]
+    },
+    {
+      "id": "community_service_corps",
+      "name": "Community Service Corps",
+      "description": "Weekly volunteering with clinics, food banks, and tutoring programs.",
+      "tags": [
+        "social_impact",
+        "healthcare"
+      ],
+      "relevantGoals": [
+        "public_health_analyst",
+        "mental_health_counselor",
+        "registered_nurse"
+      ]
+    },
+    {
+      "id": "first_gen_scholars",
+      "name": "First-Gen Scholars",
+      "description": "Peer mentoring, study spaces, and career coaching for first-generation students.",
+      "tags": [
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "business_analyst",
+        "registered_nurse",
+        "software_engineer"
+      ]
+    },
+    {
+      "id": "transfer_student_network",
+      "name": "Transfer Student Network",
+      "description": "Orientation buddies and socials for students who transferred to Ridgeview.",
+      "tags": [
+        "social_impact"
+      ],
+      "relevantGoals": [
+        "data_analyst",
+        "business_analyst",
+        "registered_nurse",
+        "software_engineer"
+      ]
+    }
+  ]
+}
